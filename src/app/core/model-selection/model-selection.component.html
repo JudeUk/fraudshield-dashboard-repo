@@ -1,1 +1,18 @@
-<p>model-selection works!</p>
+<div class="p-4">
+    <h2 class="text-xl mb-4">Model Selection</h2>
+  
+    <mat-form-field appearance="outline" class="w-full mb-4">
+      <mat-label>Select a Model</mat-label>
+      <mat-select [(value)]="selectedModelId">
+        <mat-option *ngFor="let model of models" [value]="model.id">
+          Model ID: {{ model.id }} | Type: {{ model.model_type }} | Trained: {{ model.trained_at | date:'short' }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="activateModel()" [disabled]="!selectedModelId">
+      Activate Selected Model
+    </button>
+  </div>
+  
+  

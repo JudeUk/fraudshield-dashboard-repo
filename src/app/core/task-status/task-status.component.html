@@ -1,1 +1,21 @@
-<p>task-status works!</p>
+<div class="p-4 max-w-md mx-auto">
+    <h2 class="text-xl mb-4">Check Task Status</h2>
+  
+    <mat-form-field appearance="outline" class="w-full">
+      <mat-label>Enter Task ID</mat-label>
+      <input matInput [(ngModel)]="taskId" />
+    </mat-form-field>
+  
+    <div class="mt-3 flex gap-2">
+      <button mat-raised-button color="primary" (click)="checkStatus()">Check Now</button>
+      <button mat-button color="accent" (click)="startPolling()">Start Polling</button>
+    </div>
+  
+    <mat-card *ngIf="status" class="mt-4">
+      <mat-card-title>Status: {{ status }}</mat-card-title>
+      <mat-card-content *ngIf="result">
+        <pre class="whitespace-pre-wrap text-sm">{{ result | json }}</pre>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

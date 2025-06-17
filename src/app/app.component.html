@@ -1,8 +1,8 @@
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/model-selection">Model Selection</a>
-  <a routerLink="/train-model">Train Model</a>
-  <a routerLink="/task-status">Task Status</a>
-</nav>
-
+<mat-toolbar color="primary">
+  <span>FraudShield Dashboard</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/dashboard">Dashboard</a>
+  <a mat-button routerLink="/train-model">Train Model</a>
+  <a mat-button routerLink="/select-model">Select Model</a>
+</mat-toolbar>
 <router-outlet></router-outlet>

@@ -1,1 +1,18 @@
-<p>train-model works!</p>
+<!-- src/app/core/train-model/train-model.component.html -->
+<div class="p-4">
+    <h2 class="text-xl mb-4">Train New Model</h2>
+  
+    <button mat-raised-button color="primary" (click)="trainModel()" [disabled]="isLoading">
+      Train Model
+    </button>
+  
+    <mat-progress-spinner *ngIf="isLoading" diameter="30" mode="indeterminate"></mat-progress-spinner>
+  
+    <div *ngIf="taskId" class="mt-4 text-sm">
+      Task started. View status for:
+      <a [routerLink]="['/task-status']" [queryParams]="{ task_id: taskId }">
+        {{ taskId }}
+      </a>
+    </div>
+  </div>
+  

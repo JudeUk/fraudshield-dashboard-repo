@@ -1,1 +1,16 @@
-<p>transaction-dashboard works!</p>
+<!-- src/app/core/transaction-dashboard/transaction-dashboard.component.html -->
+<div class="p-4">
+    <h2 class="text-xl mb-4">Transaction Dashboard</h2>
+  
+    <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+  
+    <mat-card *ngFor="let tx of transactions" class="mb-3">
+      <mat-card-title>Transaction ID: {{ tx.transaction_id }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Score:</strong> {{ tx.score }}</p>
+        <p><strong>Flagged:</strong> {{ tx.flagged ? 'Yes' : 'No' }}</p>
+        <p><strong>Timestamp:</strong> {{ tx.timestamp | date:'medium' }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
